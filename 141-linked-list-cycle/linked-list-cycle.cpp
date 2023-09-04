@@ -10,7 +10,7 @@ class Solution {
 public:
     bool hasCycle(ListNode *head) {
         ListNode *temp=head;
-        map<ListNode*,int> mp;
+        unordered_map<ListNode*,int> mp;
         while(temp){
             mp[temp]++;
             if(mp[temp]>1)
