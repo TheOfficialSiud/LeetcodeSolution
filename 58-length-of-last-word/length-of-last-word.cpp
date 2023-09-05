@@ -1,23 +1,16 @@
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-        int c=0,n=s.length()-1,loc;
-        // bool t=false;
-        while(n){
-            if(s[n]!=' '){
-                   loc=n;
-                break;   
-            }
-            --n;
+        int count =0;
+        for(int i= s.length()-1;i>=0;i--){
+                if(s[i]!=' '){
+                    count++;
+                }else{
+                    if(count>0){
+                        break;
+                    }
+                }
         }
-        cout<<loc;
-        while(loc>=0){
-                if(s[loc]==' ')
-                return c;
-                c++;
-                // cout<<s[]
-                --loc;
-        }
-        return c;
+        return count;
     }
 };
