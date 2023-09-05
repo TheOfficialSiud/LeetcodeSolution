@@ -16,6 +16,7 @@ public:
         if(c==1)
         {
             ans[loc]=total;
+             return ans;
         }
         else{
                 for(int i=0;i<n;i++){
