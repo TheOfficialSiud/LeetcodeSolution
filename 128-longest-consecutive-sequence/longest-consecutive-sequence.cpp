@@ -6,7 +6,7 @@ public:
         if(nums.size()==1)
         return 1;
         sort(nums.begin(),nums.end());
-        int maxi=0,j=1;
+        int maxi=1,j=1;
         for(int i=1;i<nums.size();i++){
             int m=nums[i]-nums[i-1];
             if(m==0)
@@ -14,16 +14,14 @@ public:
             if(m==1){
                 j++;  
             }
-            else{
-                
+            else{ 
                 j=1;
-                // --i;
                     }
             
             maxi=max(j,maxi);
-             cout<<m<<" "<<j<<" "<<maxi<<endl;
+            //  cout<<m<<" "<<j<<" "<<maxi<<endl;
         }
-        return max(maxi,j);
+        return maxi;
        
     }
 };
