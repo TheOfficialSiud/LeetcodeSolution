@@ -2,9 +2,9 @@ class Solution {
 public:
     vector<vector<int>> generate(int n) {
         int i=0;
-        vector<vector<int>> ans(n);
+        vector<vector<int>> ans;
         while(i<n){
-             ans[i].resize(i + 1);
+             ans.push_back(vector<int>(i+1,1));
             for(int j=0;j<=i/2;j++){
                 if(j==0){
                 ans[i][j]=1;
