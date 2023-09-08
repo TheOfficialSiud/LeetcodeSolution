@@ -4,7 +4,6 @@ public:
         int i=0;
         vector<vector<int>> ans(n);
         while(i<n){
-            // vector<int> temp(i+1,0);
              ans[i].resize(i + 1);
             for(int j=0;j<=i/2;j++){
                 if(j==0){
