@@ -4,14 +4,17 @@ public:
         int i=0;
         vector<vector<int>> ans;
         while(i<n){
-            vector<int> temp;
-            for(int j=0;j<=i;j++){
-                if(j==0)
-                temp.push_back(1);
-                else if(j==i)
-                temp.push_back(1);
+            vector<int> temp(i+1,0);
+            for(int j=0;j<=i/2;j++){
+                if(j==0){
+                temp[j]=1;
+                temp[i-j]=1;
+                }
+                // else if(j==i)
+                // temp[j]=1;
                 else{
-                    temp.push_back(ans[i-1][j-1]+ans[i-1][j]);
+                    temp[j]=ans[i-1][j-1]+ans[i-1][j];
+                    temp[i-j]=temp[j];
                 }
             }
             ans.push_back(temp);
