@@ -7,8 +7,7 @@ public:
             int x=groupSizes[i];
             mp[x].push_back(i);
         }
-        for(auto it:mp)
-        cout<<it.first<<endl;
+     
         vector<vector<int>> ans;
         for(auto& [x, v]: mp){
             int q=v.size()/x;
