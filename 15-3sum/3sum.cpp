@@ -1,6 +1,6 @@
 class Solution {
 public:
-     vector<vector<int>> two_sum(int *i,int *j, int sum  ){
+    inline vector<vector<int>> two_sum(int *i,int *j, int sum  ){
         cout<<*i<<*j<<" ";
         vector<vector<int>> answer;
         while(i<j){
@@ -18,7 +18,7 @@ public:
         }
         return answer;
     }
-    vector<vector<int>> threeSum(vector<int>& nums) {
+   inline vector<vector<int>> threeSum(vector<int>& nums) {
         map<vector<int>,int> ans;
         int i=0,j=nums.size()-1;
         sort(nums.begin(),nums.end());
