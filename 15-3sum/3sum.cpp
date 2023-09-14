@@ -18,7 +18,7 @@ public:
         }
         return answer;
     }
-   inline vector<vector<int>> threeSum(vector<int>& nums) {
+    vector<vector<int>> threeSum(vector<int>& nums) {
         map<vector<int>,int> ans;
         int i=0,j=nums.size()-1;
         sort(nums.begin(),nums.end());
