@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<vector<int>> two_sum(int *i,int *j, int sum  ){
+    inline vector<vector<int>> two_sum(int *i,int *j, int sum  ){
         cout<<*i<<*j<<" ";
         vector<vector<int>> answer;
         while(i<j){
