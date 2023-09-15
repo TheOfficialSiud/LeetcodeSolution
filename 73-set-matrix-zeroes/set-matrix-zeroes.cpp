@@ -8,17 +8,11 @@ public:
                 if(matrix[i][j]==0){
                     cout<<i<<j;
                     for(int k=0;k<m;k++){
-                        pair<int,int> pr;
-                        pr.first=k;
-                        pr.second=j;
-                        zeros.insert(pr);
+                        zeros.insert({k,j});
                         }
 
                         for(int k=0;k<n;k++){
-                        pair<int,int> pr;
-                        pr.first=i;
-                        pr.second=k;
-                        zeros.insert(pr);
+                            zeros.insert({i,k});
                         }
             }
             }
