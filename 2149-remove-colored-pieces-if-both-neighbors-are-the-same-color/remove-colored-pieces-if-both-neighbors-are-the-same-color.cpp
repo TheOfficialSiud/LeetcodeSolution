@@ -1,13 +1,33 @@
 class Solution {
 public:
 
-    bool winnerOfGame(string colors) {
-        int n=colors.size(),A=0,B=0;
-        for(int i=0;i<n-2;i++){
-            if(colors[i]==colors[i+1] && colors[i+1] == colors[i+2] && colors[i]=='A') A++;
-            if(colors[i]==colors[i+1] && colors[i+1] == colors[i+2] && colors[i]=='B') B++;
-        }
-        if(B>=A) return false;
-        return true;
+    bool winnerOfGame(string s) {
+     int a=0,b=0;
+    size_t found1=0,found2=0;
+    while(1){
+        if(found1==0)
+        found1 = s.find("AAA");
+        else
+         found1 = s.find("AAA",found1-1);
+         if(found1 ==string::npos){
+             break;
+         }
+         else{
+             s.erase(found1+1,1);
+             a++;
+         }
+        if(found2==0)
+        found2 = s.find("BBB");
+        else
+         found2 = s.find("BBB",found2-1);
+         if(found2 ==string::npos){
+             break;
+         }
+         else{
+             s.erase(found2+1,1);
+             b++;
+         }
+    }
+    return (a>b);
     }
 };
