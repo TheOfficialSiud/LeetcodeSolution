@@ -4,12 +4,12 @@ public:
         sort(nums.begin(),nums.end());
         vector<int> ans;
         int n=nums.size();
-        int occ=n/3,c=1,temp=nums[0];;
+        int c=1,temp=nums[0];;
        
         
         for(int i=1;i<n;i++){
             if(nums[i]!=temp){
-                if(c>occ){
+                if(c>n/3){
                     ans.push_back(nums[i-1]);
                 }
                 temp=nums[i];
@@ -19,8 +19,8 @@ public:
                 c++;
             }
         }
-        
-        if(c>occ){
+
+        if(c>n/3){
             ans.push_back(nums.back());
         }
         return ans;
