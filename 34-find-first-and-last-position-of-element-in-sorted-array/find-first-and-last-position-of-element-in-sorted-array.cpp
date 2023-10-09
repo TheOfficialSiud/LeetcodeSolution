@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        int i=0,j=nums.size()-1;
+        
         if(nums.size()==0){
             return {-1,-1};
         }
@@ -13,6 +13,7 @@ public:
                 return {-1,-1};
             }
         }
+        int i=0,j=nums.size()-1;
         bool t1=false,t2=false;
         while(i<=j){
             if(nums[i]==target){
@@ -32,7 +33,6 @@ public:
                 break;
             }
         }
-        cout<<i<<" "<<j;
 
         if((nums[i]==target)&&(nums[j]==target)){
             return {i,j};
