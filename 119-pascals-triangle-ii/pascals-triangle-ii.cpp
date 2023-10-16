@@ -1,9 +1,10 @@
 class Solution {
 public:
     vector<int> getRow(int rowIndex) {
-        vector<int> ans;
+       
         if(rowIndex==0)
         return {1};
+        vector<int> ans;
        ans.push_back(1);
        ans.push_back(1);
         if(rowIndex==1)
