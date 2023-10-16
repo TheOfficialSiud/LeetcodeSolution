@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> getRow(int rowIndex) {
+   inline vector<int> getRow(int rowIndex) {
        
         if(rowIndex==0)
         return {1};
