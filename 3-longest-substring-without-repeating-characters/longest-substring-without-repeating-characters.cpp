@@ -21,11 +21,9 @@ public:
         
         for(int i=0;i<s.length();i++){
           temp=modifier(temp,s[i]);
-          cout<<temp<<endl;
           if(temp.length()>ans.length())
           ans=temp;
         }
-        cout<<ans;
         return ans.length();
     }
 };
