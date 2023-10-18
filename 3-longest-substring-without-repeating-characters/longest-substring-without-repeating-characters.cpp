@@ -1,29 +1,24 @@
 class Solution {
 public:
-    string modifier(string s,char c){
-        int pos=-1;
-        for(int i=0;i<s.length();i++){
-            if(s[i]==c)
-            {
-                pos=i;
-                break;
+    int lengthOfLongestSubstring(string s) {
+        int n = s.length();
+        int maxLength = 0;
+        unordered_set<char> charSet;
+        int left = 0;
+        
+        for (int right = 0; right < n; right++) {
+            if (charSet.count(s[right]) == 0) {
+                charSet.insert(s[right]);
+                maxLength = max(maxLength, right - left + 1);
+            } else {
+                while (charSet.count(s[right])) {
+                    charSet.erase(s[left]);
+                    left++;
+                }
+                charSet.insert(s[right]);
             }
         }
-        if(pos!=-1){
-             s=s.substr(pos+1);
-        }
-        s.push_back(c);
-        return s;
-    }
-    int lengthOfLongestSubstring(string s) {
-        int i=0;
-        string ans="",temp="";
         
-        for(int i=0;i<s.length();i++){
-          temp=modifier(temp,s[i]);
-          if(temp.length()>ans.length())
-          ans=temp;
-        }
-        return ans.length();
+        return maxLength;
     }
 };
