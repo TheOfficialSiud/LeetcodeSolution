@@ -18,7 +18,6 @@ class Solution {
             max = high - low;
             lngMax = Math.max(max, lngMax);
         }
-
         return lngMax;
     }
 }
