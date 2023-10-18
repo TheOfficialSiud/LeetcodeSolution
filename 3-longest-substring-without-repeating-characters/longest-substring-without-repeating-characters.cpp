@@ -1,24 +1,29 @@
 class Solution {
 public:
-
+    string modifier(string s,char c){
+        int pos=-1;
+        for(int i=0;i<s.length();i++){
+            if(s[i]==c)
+            {
+                pos=i;
+                break;
+            }
+        }
+        if(pos!=-1){
+             s=s.substr(pos+1);
+        }
+        s.push_back(c);
+        return s;
+    }
     int lengthOfLongestSubstring(string s) {
         int i=0;
-        string ans="";
+        string ans="",temp="";
         
         for(int i=0;i<s.length();i++){
-            string temp="";
-            set<char> t;
-            for(int j=i;j<s.length();j++){
-                t.insert(s[j]);
-                temp+=s[j];
-                if(t.size()!=temp.length()){
-                    temp.pop_back();
-                     break;
-                }
-               
-            }
-            if(ans.length()<temp.length())
-            ans=temp;
+          temp=modifier(temp,s[i]);
+          cout<<temp<<endl;
+          if(temp.length()>ans.length())
+          ans=temp;
         }
         cout<<ans;
         return ans.length();
