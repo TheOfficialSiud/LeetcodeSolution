@@ -1,12 +1,6 @@
 class Solution {
 public:
 
-// bool checkpermutation(string s,string t){
-//     do{
-//         if(s==t)
-
-//     }
-// }
     bool checkInclusion(string s1, string s2) {
         if(s1.length()>s2.length())
         return false;
