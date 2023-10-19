@@ -1,67 +1,35 @@
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
-        if(nums.size()==1)
-        {
-            if(nums[0]==target)
-            return 0;
-            else
-            return -1;
-        }
-       int pivot=-1;
-       int i=0,j=nums.size()-1,mid=(i+j)/2;
-       while(i<j){
-            if(nums[mid]>=nums[0])
-            {
+   int binarysearch(vector<int> arr,int s,int e,int target){
+       int mid=(s+e)/2;
+       while(s<=e){
+           if(arr[mid]==target)
+           return mid;
+           else if(arr[mid]<target)
+           s=mid+1;
+           else
+           e=mid-1;
+           mid=(s+e)/2;
+       }
+       return -1;
+   }
+    int search(vector<int>& arr, int target) {
+        int i=0,j=arr.size()-1,mid=(i+j)/2;
+        while(i<j){
+            if(arr[mid]>=arr[0]){
                 i=mid+1;
             }
             else{
                 j=mid;
             }
             mid=(i+j)/2;
-       }
-        pivot=i;
-        // if(pivot==nums.size()-1)
-        // --pivot;
-        // if(pivot==0)
-        // ++pivot;
+        }
+        int pivot=i;
         cout<<pivot;
-        if((target>=nums[pivot])&&(target<=nums[nums.size()-1])){
-               //cout<<1;
-                    i=pivot;
-                    j=nums.size()-1;
-                    mid=(i+j)/2;
-                    while(i<=j){
-                        cout<<nums[mid]<<endl;
-                        if(nums[mid]==target)
-                        return mid;
-                        else if(nums[mid]<target){
-                            i=mid+1;
-                        }
-                        else
-                        j=mid-1;
-                        mid=(i+j)/2;
-                        
-                    }
-            }
-            else {
-                //cout<<1;
-                    i=0;
-                    j=pivot-1;
-                    mid=(i+j)/2;
-                    while(i<=j){
-                        if(nums[mid]==target)
-                        return mid;
-                        else if(nums[mid]<target){
-                            i=mid+1;
-                        }
-                        else
-                        j=mid-1;
-                        mid=(i+j)/2;
-                    }
-            }
-            
-
-       return -1;
+        int ans=binarysearch(arr,pivot,arr.size()-1,target);
+        //cout<<ans;
+        if(ans==-1)
+        ans=binarysearch(arr,0,pivot-1,target);
+        return ans;;
     }
 };
