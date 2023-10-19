@@ -17,6 +17,7 @@ public:
         mp[s[i]]++;
         if(mp.size()==1)
         return ((n+1)*n)/2;
+        mp.clear();
         for(int i=0;i<n;i++){
             string t="";
             for(int j=i;j<n;j++){
