@@ -16,9 +16,6 @@ string orginal(string s){
     return ans;
 }
     bool backspaceCompare(string s, string t) {
-      s=orginal(s);
-      t=orginal(t);
-      cout<<s<<" "<<t;
-      return (s==t);
+      return (orginal(t)==orginal(s));
     }
 };
