@@ -11,7 +11,6 @@ string orginal(string s){
         else{
             ans.push_back(s[i]);
         }
-        cout<<ans<<endl;
     }
     return ans;
 }
