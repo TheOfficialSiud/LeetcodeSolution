@@ -10,26 +10,20 @@ public:
     bool checkInclusion(string s1, string s2) {
         if(s1.length()>s2.length())
         return false;
-        int win=s1.length();
+        
+        
+        int n=s1.length();
         vector<int> fir(26,0);
-        for(int i=0;i<win;i++){
-            fir[int(s1[i])-97]++;
-            // cout<<97-int(s1[i])<<" ";
+        for(int i=0;i<n;i++){
+            fir[s1[i]-'a']++;
         }
        
-        for(int i=0;i<=s2.length()-win;i++){
+        for(int i=0;i<=s2.length()-n;i++){
             vector<int> sec(26,0);
-           // string t=""
-            for(int j=i;j<i+win;j++){
-            sec[int(s2[j])-97]++;
-            //t+=s[j];
-        
+            for(int j=i;j<i+n;j++){
+            sec[s2[j]-'a']++;
         }
-        for(int i=0; i<sec.size();i++)
-        cout<<sec[i]<<" ";
-        cout<<endl;
         if(fir==sec){
-        //if(checkpermutation(s1,t))
         return true;
        }
         }
