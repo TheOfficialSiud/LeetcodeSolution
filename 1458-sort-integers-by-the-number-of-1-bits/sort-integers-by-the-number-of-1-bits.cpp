@@ -2,15 +2,14 @@ class Solution {
 public:
     vector<int> sortByBits(vector<int>& arr) {
         int n=arr.size();
-        map<int,int> mp;
-        for(int i=0;i<n;i++){
-            mp[arr[i]]=__builtin_popcount(arr[i]);
-        }
+        //sort(arr.begin(),arr.end());
         for(int i=0;i<n;i++){
                 for(int j=i+1;j<n;j++){
-                    if(mp[arr[j]]<mp[arr[i]])
+                    int t1=__builtin_popcount(arr[j]);
+                    int t2=__builtin_popcount(arr[i]);
+                    if(t1<t2)
                     swap(arr[j],arr[i]);
-                    else if(mp[arr[j]]==mp[arr[i]]){
+                    else if(t1==t2){
                         if(arr[i]>arr[j])
                             swap(arr[i],arr[j]);
                     }
