@@ -9,6 +9,6 @@ public:
         if(nums[n-1]>nums[0])
         c++;
 
-        return (c==1||c==0);
+        return c<=1;
     }
 };
