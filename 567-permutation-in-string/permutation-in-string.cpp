@@ -2,26 +2,29 @@ class Solution {
 public:
 
    inline bool checkInclusion(string s1, string s2) {
-        if(s1.length()>s2.length())
-        return false;
-        
-        
-        int n=s1.length();
-        vector<int> fir(26,0);
-        for(int i=0;i<n;i++){
-            fir[s1[i]-'a']++;
-        }
-       
-        for(int i=0;i<=s2.length()-n;i++){
-            vector<int> sec(26,0);
-            for(int j=i;j<i+n;j++){
-            sec[s2[j]-'a']++;
-        }
-        if(fir==sec){
-        return true;
+       int n=s1.length(),m=s2.length();
+       if(n>m)
+       return false;
+       vector<int> a(26,0);
+       for(int i=0;i<n;i++){
+           a[s1[i]-'a']++;
        }
+        vector<int> b(26,0);
+       for(int i=0;i<n;i++){
+            b[s2[i]-'a']++;
+       }
+       if(a==b)
+       return true;
+      // cout<<2;
+        for(int i=1;i<=m-n;i++){
+            b[s2[i-1]-'a']--;
+            b[s2[i+n-1]-'a']++;
+            //cout<<1;
+            if(a==b)
+            return true;
         }
 
-        return false;
+
+       return false;
     }
 };
