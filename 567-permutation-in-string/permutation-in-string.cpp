@@ -15,11 +15,9 @@ public:
        }
        if(a==b)
        return true;
-      // cout<<2;
         for(int i=1;i<=m-n;i++){
             b[s2[i-1]-'a']--;
             b[s2[i+n-1]-'a']++;
-            //cout<<1;
             if(a==b)
             return true;
         }
