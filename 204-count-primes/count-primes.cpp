@@ -3,12 +3,12 @@ public:
     int countPrimes(int n) {
         if(n<=1)
         return 0;
-       vector<bool> prime(n,true);
+       vector<bool> prime(n,1);
        for(int i=2;i<sqrt(n);i++){
            if(!prime[i])
            continue;
             for(int j=(i*i);j<n;j+=i){
-                    prime[j]=false;
+                    prime[j]=0;
             }
        }
        int ans=0;
