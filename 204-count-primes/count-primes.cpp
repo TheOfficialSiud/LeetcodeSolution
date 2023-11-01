@@ -3,21 +3,18 @@ public:
     int countPrimes(int n) {
         if(n<=1)
         return 0;
-       vector<int> prime(n,0);
-    //    for(int i=0;i<n-1;i++){
-    //         prime[i]=i+2;
-    //    }
+       vector<bool> prime(n,1);
        for(int i=2;i<sqrt(n);i++){
-           if(prime[i]==-1)
+           if(!prime[i])
            continue;
             for(int j=(i*i);j<n;j+=i){
-                    prime[j]=-1;
+                    prime[j]=false;
             }
        }
        int ans=0;
        for(int i=2;i<prime.size();i++)
        {
-            if(prime[i]!=-1)
+            if(prime[i])
             ans++;
        }
        return ans;
