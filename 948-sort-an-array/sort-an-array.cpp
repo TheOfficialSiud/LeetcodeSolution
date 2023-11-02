@@ -79,7 +79,8 @@ public:
 
     vector<int> sortArray(vector<int>& arr) {
       //bubblesort(arr,0,arr.size());
-      mergesort(arr,0,arr.size()-1);
+      //mergesort(arr,0,arr.size()-1);
+      sort(arr.begin(),arr.end());
       return arr;
     }
 };
