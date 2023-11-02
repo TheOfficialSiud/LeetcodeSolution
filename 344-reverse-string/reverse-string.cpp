@@ -1,12 +1,12 @@
 class Solution {
 public:
-    void reversing(vector<char>& s,int i,int j){
-            if(i>=j)
+    void reversing(vector<char>& s,int i){
+            if(i>=s.size()/2)
             return;
-            swap(s[i],s[j]);
-            return reversing(s,++i,--j);
+            swap(s[i],s[s.size()-1-i]);
+            return reversing(s,++i);
     }
-    inline void reverseString(vector<char>& s) {
-      reversing(s,0,s.size()-1);
+    void reverseString(vector<char>& s) {
+      reversing(s,0);
     }
 };
