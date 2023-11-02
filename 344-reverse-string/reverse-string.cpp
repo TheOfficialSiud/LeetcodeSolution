@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void reversing(vector<char>& s,int i,int j){
+    inline void reversing(vector<char>& s,int i,int j){
             if(i>=j)
             return;
             swap(s[i],s[j]);
