@@ -10,18 +10,8 @@ public:
                     index++;
             }
             else{
-                int c=0;
-                while(i!=target[index] && i<=n){
-                    c++;
-                    stk.push_back("Push");
-                    i++;
-                }
-                while(c){
-                    stk.push_back("Pop");
-                    --c;
-                }
                 stk.push_back("Push");
-                index++;
+                stk.push_back("Pop");
 
             }
         }
