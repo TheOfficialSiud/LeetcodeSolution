@@ -1,21 +1,17 @@
 class Solution {
 public:
-    bool palindromic(int x,long long v,int n){
-        if(x<0)
-        return 0;
+    void reversenumber(int x,long long &ans){
         if(x==0)
-        return (v==n);
-        else
-        {
-            v=(v*10)+(x%10);
-            x/=10;
-            return palindromic(x,v,n);
-        }
-    }
-
-    bool isPalindrome(int x) {
+        return;
+        ans=(ans*10)+(x%10);
+        reversenumber(x/10,ans);
         
-        return palindromic(x,0ll,x);
-
+    }
+    bool isPalindrome(int x) {
+        if(x<0)
+        return false;
+        long long ans=0;
+        reversenumber(x,ans);
+        return (x==ans);
     }
 };
