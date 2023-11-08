@@ -1,25 +1,22 @@
 class Solution {
 public:
-    void partition(vector<int> nums,vector<int> output,int ind,vector<vector<int>> &ans){
-        if(ind>=nums.size())
-        {
-            ans.push_back(output);
-            return;
-        }
+    void sunset(vector<int> nums,vector<int> output, vector<vector<int>> &ans, int i){
+        if(i>=nums.size())
+       {
+           ans.push_back(output);
+           return;
+       }
+        sunset(nums,output,ans,i+1);
 
-        //exclude
-            partition(nums,output,ind+1,ans);
-
-        //include
-        int element=nums[ind];
-        output.push_back(nums[ind]);
-         partition(nums,output,ind+1,ans); 
-        
+        int t=nums[i];
+        output.push_back(t);
+        sunset(nums,output,ans,i+1);
     }
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<vector<int>> ans;
         vector<int> output;
-         partition(nums,output,0,ans);
-         return ans;
+        sunset(nums,output,ans,0);
+
+        return ans;
     }
 };
