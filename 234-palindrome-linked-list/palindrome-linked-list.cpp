@@ -42,24 +42,24 @@ public:
         
         ListNode *slow=head,*fast=head,*temp=head;
         int cnt=0;
-        while(temp)
-        {
-            cnt++;
-            temp=temp->next;
-        }
+        // while(temp)
+        // {
+        //     cnt++;
+        //     temp=temp->next;
+        // }
         while(fast!=NULL&&fast->next!=NULL){
             slow=slow->next;
             fast=fast->next->next;
         }
        
-        if(cnt%2!=0)
-        slow=slow->next;
+        // if(cnt%2!=0)
+        // slow=slow->next;
         temp=head;
         slow =reversing(slow);
 
         cout<<slow->val<<cnt;
          
-        while(slow){
+        while(slow&&temp){
             if(slow->val!=temp->val)
             return false;
             slow=slow->next;
