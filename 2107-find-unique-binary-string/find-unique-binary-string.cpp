@@ -8,7 +8,8 @@ public:
             mp[temp]=-1;
         }
         int ansint;
-        for(int i=0;i<pow(2,n);i++){
+        int t=nums[0].length();
+        for(int i=0;i<pow(t,2)+1;i++){
             if(mp[i]==0){
                 ansint=i;
                 break;
