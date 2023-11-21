@@ -7,8 +7,7 @@ public:
         for(int i=0;i<n;i++){
             string s=to_string(nums[i]);
             reverse(s.begin(),s.end());
-            int temp=nums[i]-stoi(s);
-            mp[temp]++;
+            mp[nums[i]-stoi(s)]++;
         }
         int ans=0;
         int mod=1e9+7;
