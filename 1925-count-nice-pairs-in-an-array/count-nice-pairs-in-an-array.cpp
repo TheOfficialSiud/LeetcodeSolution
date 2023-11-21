@@ -11,6 +11,9 @@ public:
         return re;
     }  
     int countNicePairs(vector<int>& nums) {
+        ios_base::sync_with_stdio(false);
+		cin.tie(0);
+		cout.tie(0);
         unordered_map<int,int> mp;
         int n=nums.size();
         for(int i=0;i<n;i++){
