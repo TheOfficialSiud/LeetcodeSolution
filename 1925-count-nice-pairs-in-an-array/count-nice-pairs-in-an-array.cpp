@@ -1,14 +1,14 @@
 class Solution {
 public:
     int countNicePairs(vector<int>& nums) {
-        vector<int> temp;
+        // vector<int> temp;
         map<int,int> mp;
         int n=nums.size();
         for(int i=0;i<n;i++){
             string s=to_string(nums[i]);
             reverse(s.begin(),s.end());
-            temp.push_back(nums[i]-stoi(s));
-            mp[temp.back()]++;
+            int temp=nums[i]-stoi(s);
+            mp[temp]++;
         }
         int ans=0;
         int mod=1e9+7;
