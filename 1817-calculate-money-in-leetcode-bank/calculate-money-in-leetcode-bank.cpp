@@ -5,7 +5,6 @@ public:
         int t=n/7;
         n=n%7;
         sum=t*28+(n*(n+1)/2);
-        cout<<sum;
         if(n!=0){
             sum+=t*n;
         }
