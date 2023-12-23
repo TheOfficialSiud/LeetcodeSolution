@@ -1,5 +1,14 @@
 class Solution {
 public:
+struct PairHash {
+    template <class T1, class T2>
+    size_t operator () (const pair<T1, T2>& p) const {
+        auto h1 = hash<T1>{}(p.first);
+        auto h2 = hash<T2>{}(p.second);
+
+        return h1 ^ h2;
+    }
+};
     bool isPathCrossing(string path) {
         // int Nans=0,Eans=0;
         // for(int i=0;i<path.length();i++){
@@ -47,7 +56,7 @@ public:
 
 
         int x=0,y=0;
-        map<pair<int,int>,int> mp;
+        unordered_map<pair<int,int>,int, PairHash> mp;
         mp[{x,y}]++;
         for(int i=0;i<path.length();i++){
               if(path[i]=='N'){
