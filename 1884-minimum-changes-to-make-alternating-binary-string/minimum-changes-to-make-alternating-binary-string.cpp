@@ -1,7 +1,6 @@
 class Solution {
 public:
     int minOperations(string s) {
-        string temp="";
         int n=s.length();
         int c1=0,c2=0;
         for(int i=0;i<n;i++){
