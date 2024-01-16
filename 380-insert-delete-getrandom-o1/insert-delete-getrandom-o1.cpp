@@ -43,9 +43,11 @@ public:
         if(mp[val]!=0){
             mp[val]--;
             --c;
+            mp.erase(val);
             return 1;
         }
         else
+        mp.erase(val);
         return 0;
 
         
@@ -56,10 +58,10 @@ public:
         t=t%c;
         for(auto it:mp){
           if(t==0){
-            if(it.second!=0)
+            // if(it.second!=0)
             return it.first;
-            else 
-            ++t;
+            // else 
+            // ++t;
           }
           --t;
         }
