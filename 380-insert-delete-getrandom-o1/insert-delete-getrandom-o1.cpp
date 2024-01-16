@@ -65,7 +65,7 @@ public:
         //   }
         //   --t;
         // }
-        unordered_map<int, int>::iterator it=mp.begin();
+        auto it=mp.begin();
         while(t){
             it++;
             --t;
