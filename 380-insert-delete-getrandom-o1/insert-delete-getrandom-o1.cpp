@@ -56,16 +56,21 @@ public:
     int getRandom() {
         int t=rand(),n=mp.size();
         t=t%c;
-        for(auto it:mp){
-          if(t==0){
-            // if(it.second!=0)
-            return it.first;
-            // else 
-            // ++t;
-          }
-          --t;
+        // for(auto it:mp){
+        //   if(t==0){
+        //     // if(it.second!=0)
+        //     return it.first;
+        //     // else 
+        //     // ++t;
+        //   }
+        //   --t;
+        // }
+        unordered_map<int, int>::iterator it=mp.begin();
+        while(t){
+            it++;
+            --t;
         }
-            return 0;
+            return it->first;
     }
 };
 
