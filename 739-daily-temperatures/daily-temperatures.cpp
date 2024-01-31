@@ -7,14 +7,8 @@ public:
         st.push(n-1);
         vector<int> ans(n,0);
         for(int i=n-2;i>=0;i--){
-            if(tp[i]<tp[st.top()]){
-                ans[i]=1;
-                st.push(i);
-            }
-            else{
                 while(!st.empty()&&tp[i]>=tp[st.top()]){
-                        st.pop();
-                        
+                        st.pop();      
                 }
                 if(st.empty()){
                     ans[i]=0;
@@ -25,9 +19,6 @@ public:
 
                 }
                  st.push(i);
-            }
-
-
         }
 
         return ans;
