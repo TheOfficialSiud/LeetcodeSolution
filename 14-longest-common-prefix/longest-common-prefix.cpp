@@ -6,9 +6,10 @@ public:
        int j=strs[0].length()-1;
         string ans="";
        while(k<n){
-            ans="";
+
         int i=0;
         while(i<=j&&i<strs[k].length()&&strs[0][i]==strs[k][i]){
+            if(k==n-1)
             ans.push_back(strs[0][i]);
             i++;
         }
