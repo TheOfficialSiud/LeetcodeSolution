@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool ispalindrome(string s){
+        int n=s.length();
+        for(int i=0;i<n;i++){
+            if(s[i]!=s[n-i-1])
+            return 0;
+        }
+        return 1;
+    }
+    string firstPalindrome(vector<string>& words) {
+
+        int n=words.size();
+        for(int i=0;i<n;i++){
+            if(ispalindrome(words[i]))
+            return words[i];
+        }
+        return "";
+    }
+};
