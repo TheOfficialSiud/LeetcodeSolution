@@ -17,10 +17,6 @@ public:
 
         ListNode *temp=head,*prev;
 
-       
-
-      
-
         int c=1,len=1;
          while(temp->next!=NULL){
             
@@ -30,24 +26,16 @@ public:
             temp=temp->next;
         }
 
-
-        
-        // if(len==1)
-        // return NULL;
-
         if(len==n)
         {
-            
             return head->next;
         }
 
         n=len-n+1;
          temp=head;
-        // cout<<n;
-        while(temp){
-            // cout<<c;
-            c++;
 
+        while(temp){
+            c++;
             if(c==n)
             break;
             else
