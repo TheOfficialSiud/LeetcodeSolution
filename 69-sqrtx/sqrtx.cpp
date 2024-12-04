@@ -1,17 +1,24 @@
 class Solution {
 public:
     int mySqrt(int x) {
-        int i=0,j=x,mid=(i+j)/2;
-        while(i<=j){
-            long temp=pow(mid,2);
-            if(temp==x)
-            return mid;
-            else if (temp>x)
-            j=mid-1;
-            else
-            i=mid+1;
-            mid=(i+j)/2;
+        if (x < 2) return x; // Handle 0 and 1
+
+        int left = 1;
+        int right = x;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            long long midSquared = (long long)mid * mid; // Use long long to prevent overflow
+
+            if (midSquared == x) {
+                return mid; // Found the exact square root
+            } else if (midSquared < x) {
+                left = mid + 1; // Move to the right half
+            } else {
+                right = mid - 1; // Move to the left half
+            }
         }
-        return mid;
+
+        return right; // The largest integer whose square is <= x
     }
 };
