@@ -19,20 +19,16 @@ public:
             
         }
 
-        sort(nums.begin(),nums.end());
+        // sort(nums.begin(),nums.end());
 
         int i=0,j=n-1;
 
-        while(i<j){
-            if(nums[i]+nums[j]==target){
-                return {mp[nums[i]],mp[nums[j]]};
-            }
-            else if(nums[i]+nums[j]>target){
-                --j;
-            }
-            else{
+        while(i<n){
+           int tar=target-nums[i];
+            if(mp.find(tar)!=mp.end()&&mp[tar]!=i)
+                return {i,mp[tar]};
+            else
                 i++;
-            }
         }
 
         return {i,j};
