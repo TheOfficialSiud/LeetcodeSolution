@@ -40,7 +40,6 @@ public:
         i=0;
         int m=1;
         while(m<n){
-            cout<<1;
             if(s[i]==s[m]){
                 string curr="";
                 curr.push_back(s[i]);
