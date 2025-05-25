@@ -19,8 +19,7 @@ public:
             }
            
             maxi=max(maxi,len);
-            cout<<i<<" "<<j<<" "<<maxi<<" "<<len<<" "<<mp[s[i]]<<endl;
-
+           
             i++;
         }
        
