@@ -1,82 +1,66 @@
 class Solution {
 public:
-    int myAtoi(string s) {
-         bool t1=false;
-         string temp;
-        // for(int i=0;i<s.length();i++){
-        //     if((!t1)&&((s[i]<char(48))||(s[i]>char(57))))
-        //     break;
-        //     if((t1)&&((s[i]=='+')||(s[i]=='-'))){
-        //         t2=true;
-        //     }
-        //     if((s[i]>=char(48))&&(s[i]<=char(57))){
-        //         temp+=s[i];
-        //         t1=false;
-        //     }
-        // }
 
-        // int ans=0;
-        // if(st-)
-        
-        for(int i=0;i<s.length();i++){
-            if(!temp.empty()){
-                if(!((s[i]>=char(48))&&(s[i]<=char(57))))
-                break;
+    bool digit(char c){
+        return (c>='0'&&c<='9');
+
+    }
+    int myAtoi(string s) {
+        int ans=0;
+        int n=s.length();
+        string dig="";
+        char sign='p';
+
+        for(int i=0;i<n;i++){
+            if(s[i]==' '){
+                if(dig==""){
+                    continue;
+                }
                 else{
-                    temp+=s[i];
+                    break;
                 }
             }
-            else{
-                if(s[i]==' ')
-                continue;
-                else if((s[i]=='-')||(s[i]=='+')){
-                    if(i+1<s.length()){
-                        if((s[i+1]>=char(48))&&(s[i+1]<=char(57))){
-                            if(s[i]=='-')
-                            t1=true;
-                        }
-                        else
-                        break;
+            else if(s[i]=='+'||s[i]=='-'){
+                 if(dig==""&&i+1<n&&digit(s[i+1])){
+                    if(s[i]=='-'){
+                        sign='n';
                     }
                 }
-                else  if((s[i]>=char(48))&&(s[i]<=char(57))){
-                    temp+=s[i];
+                else{
+                    break;
                 }
-                else
+
+            }
+            else if(digit(s[i])){
+
+                dig+=s[i];
+            }
+            else{
                 break;
             }
         }
 
-        if(temp.empty())
-        return 0;
-
-            int ans =0;
-            
-            for(int i=0;i<temp.length();i++){
-                long t=long(ans);
-                // cout<<int(temp[i])<<" ";
-                // t=long(ans*10)+(int(temp[i])-48);
-                t=t*10+(int(temp[i])-48);
-                if(t>INT_MAX){
-                    if(t1)
-                    return INT_MIN;
-                    else
-                    return INT_MAX;
-                }
-                
-                else 
-                ans=t;
-                //ans=ans*10+(int(temp[i])-48);
+         long s1=1;
+            if(sign=='n'){
+            s1=-1;
             }
-            
-    // cout<<ans;
-            if(t1){
-                ans=(-1)*ans;
-                    return ans;
+        for(int i=0;i<dig.length();i++){
+            long temp=long(ans)*10+(long(dig[i]-'0')*s1);
+           
+            // cout<<temp<<endl;
+            if(temp>INT_MAX){
+                return INT_MAX;
+            }
+            else if(temp<INT_MIN){
+                return INT_MIN;
             }
             else
-            return ans;
+            ans=temp;
+        }
 
-
+        // cout<<dig;
+       
+        return ans;
+        
     }
 };
