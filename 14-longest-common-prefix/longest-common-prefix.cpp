@@ -4,30 +4,34 @@ public:
 
         int i=0;
         int len=s.size();
-        string ans=s[0];
+        string ans="";
         int n=s[0].length();
 
         
         for(int i=1;i<len;i++){
+            // cout<<n<<endl;
             int j=0;
             int m=s[i].length();
-            string curr="";
             while(j<m&&j<n){
-                if(ans[j]==s[i][j]){
-                    curr=curr+ans[j];
-                }
-                else{
+                if(s[0][j]!=s[i][j]){
                     break;
                 }
                 j++;
             }
 
-            if(curr=="")
+            if(j<0)
             return "";
             else
-            ans=curr;
+            n=j;
             
         }
+        //  if(n<=0)
+        //     return "";
+
+        for(int i=0;i<n;i++){
+            ans+=s[0][i];
+        }
+        // cout<<n;
 
         return ans;
         
