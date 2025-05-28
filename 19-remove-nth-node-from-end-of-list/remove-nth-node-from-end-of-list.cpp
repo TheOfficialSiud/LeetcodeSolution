@@ -15,10 +15,9 @@ public:
 
         
         ListNode *prev=NULL, *curr=head;
-        if(n==0)
-        return head;
+        // if(n==0)
+        // return head;
         
-
         int len=0;
         while(curr){
             len++;
@@ -30,12 +29,6 @@ public:
         curr=head;
         n=len-n+1;
 
-
-
-
-        
-        
-        
         while(curr){
             --n;
             if(n==0){
