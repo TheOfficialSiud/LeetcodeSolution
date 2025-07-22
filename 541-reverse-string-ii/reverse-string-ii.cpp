@@ -6,37 +6,26 @@ public:
         int r=n;
 
         while(r!=0&&i<n){
+            int start, end;
             if(r<k){
-                int start=i,end=i+r-1;
-                 while(start<end){
-                    swap(s[start],s[end]);
-                    start++;
-                    end--;
-                }
+                start=i,end=i+r-1;
                 r=r-r;
-
             }
             else if(r<2*k){
-                 int start=i,end=i+k-1;
-                 while(start<end){
-                    swap(s[start],s[end]);
-                    start++;
-                    end--;
-                }
+                start=i,end=i+k-1;
                 r=r-r;
             }
             else{
-                int start=i,end=i+k-1;
-                while(start<end){
+                start=i,end=i+k-1;
+                i=i+2*k;
+                r=r-2*k;
+            }
+            
+            while(start<end){
                     swap(s[start],s[end]);
                     start++;
                     end--;
                 }
-                i=i+2*k;
-                r=r-2*k;
-            }
-
-            cout<<s<<endl;
 
         }
 
