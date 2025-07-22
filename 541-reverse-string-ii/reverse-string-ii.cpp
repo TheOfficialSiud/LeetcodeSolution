@@ -5,7 +5,7 @@ public:
         int n=s.length();
         int r=n;
 
-        while(r!=0&&i<n){
+        while(r!=0){
             int start, end;
             if(r<k){
                 start=i,end=i+r-1;
