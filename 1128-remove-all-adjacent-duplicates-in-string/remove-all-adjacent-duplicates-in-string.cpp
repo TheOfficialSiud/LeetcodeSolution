@@ -1,18 +1,29 @@
 class Solution {
 public:
     string removeDuplicates(string s) {
+        stack<char> st;
         int i=0;
-        while(!s.empty()&&(i<s.length()-1)){
-            if(s[i]==s[i+1]){
-                s.erase(i,2);
-                --i;
-                if(i<0)
-                i=0;
+        int n=s.length();
+        
+
+        while(i<n){
+            if(!st.empty()&&st.top()==s[i]){
+                st.pop();
             }
             else{
-                i++;
+                st.push(s[i]);
             }
+            i++;
         }
-        return s;
+
+        string ans="";
+
+        while(!st.empty()){
+            ans=ans+st.top();
+            st.pop();
+        }
+
+        reverse(ans.begin(),ans.end());
+        return ans;
     }
 };
